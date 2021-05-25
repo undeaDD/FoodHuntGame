@@ -1,0 +1,6 @@
+function toggle() {
+    document.getElementById("root").classList.toggle("lightmode");
+    document.getElementById("root").classList.toggle("darkmode");
+}
+
+document.getElementById("navBar__toggle").addEventListener("click", toggle);

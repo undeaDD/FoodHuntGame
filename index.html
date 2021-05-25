@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Food Hunt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="apple-touch-icon" sizes="100x100" href="https://img.icons8.com/fluent/100/000000/music-robot.png" />
+    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/fluent/32/000000/music-robot.png">
+    <title>Food Hunt Game</title>
+
+    <style>
+        * {
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+
+            pointer-events: none;
+            outline: none;
+
+            -khtml-user-focus: none;
+            -moz-user-focus: none;
+            -o-user-focus: none;
+        }
+        html, body, .container {
+            height: 100%;
+            width: 100%;
+            background-color: darkGray;
+            overflow: hidden;
+        }
+        .col {
+            height: calc((100vh - 56px) / 6);
+            width: calc((100vw - 56px) / 6);
+            -webkit-box-shadow: inset 0px 0px 0px 3px #a9a9a9;
+            -moz-box-shadow: inset 0px 0px 0px 3px darkGray;
+            box-shadow: inset 0px 0px 0px 3px darkGray;
+            padding: 0 !important;
+        }
+
+        .col img {
+            width: 100%;
+            height: 100%;
+            padding: 15%;
+            object-fit: contain;
+        }
+
+        .navbar {
+            height: 56px;
+            max-height: 56px;
+            min-height: 56px;
+            width: 100%;
+        }
+
+        .botSymbol {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        img {
+            -webkit-filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
+        }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar">
+        <span class="ml-2 mr-auto h2 float-left">
+            <img class="botSymbol"  src="https://img.icons8.com/fluent/100/000000/broken-robot.png">
+            <span id="bot0Counter" class="badge badge-light px-3">0</span>
+            <span class="mx-2 h4">vs.</span>
+            <span id="bot1Counter" class="badge badge-light px-3">0</span>
+            <img class="botSymbol" src="https://img.icons8.com/fluent/100/000000/music-robot.png">
+        </span>
+        <span class="ml-auto mr-2 h3 text-right float-right">
+            <img class="botSymbol" src="https://img.icons8.com/cotton/100/000000/orange--v2.png">
+            <span id="fruitCounter" class="badge badge-light px-3">10</span>
+        </span>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+            <div class="col">
+                <img />
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            window.alternating = false;
+            function getBackgroundColor(index) {
+                alternating = index % 6 == 0 ? alternating : !alternating;
+                return alternating ? "white" : "gray";
+            }
+
+            Array.prototype.random = function () {
+                return this[Math.floor( Math.random() * this.length)];
+            }
+
+            window.bot0Image = "https://img.icons8.com/fluent/100/000000/broken-robot.png";
+            window.bot0Pos = 0;
+            window.bot0Turn = 0;
+            
+            window.bot1Image = "https://img.icons8.com/fluent/100/000000/music-robot.png";
+            window.bot1Pos = 35;
+            window.bot1Turn = 0;
+
+            window.fruitImage = "https://img.icons8.com/cotton/100/000000/orange--v2.png";
+
+            window.actions = {
+                "up": 0,
+                "down": 1,
+                "left": 2,
+                "right": 3,
+                "take": 4,
+                "pass": 5
+            }
+
+            window.fruitPos = new Array(36).fill(false);
+            window.emptyImage = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
+            document.querySelectorAll('.col').forEach(function(elem, index) {
+                elem.style.backgroundColor = getBackgroundColor(index);
+                var img = elem.getElementsByTagName('img')[0];
+                if (index === bot0Pos) {
+                    img.setAttribute("src", bot0Image);
+                } else if (index === bot1Pos) {
+                    img.setAttribute("src", bot1Image);
+                } else if (Math.random() < 0.25) {
+                    img.setAttribute("src", fruitImage);
+                    fruitPos[index] = true;
+                } else {
+                    img.setAttribute("src", emptyImage);
+                }
+            });
+            document.getElementById("fruitCounter").innerText = fruitPos.filter(x => !!x).length;
+
+            window.infiniteLoopRef = setInterval(function() {
+                if(window.fruitPos.every(function(e) { return !e; })) {
+                    clearInterval(window.infiniteLoopRef);
+                    if (confirm("Game finished! New Game?")) {
+                        location.reload();
+                    }
+                } else {
+                    play(0);
+                    play(1);    
+                }
+            }, 100);
+
+            
+
+            function validateAction(botId, action) {
+                switch (action) {
+                    case "up":
+                        return window["bot" + botId + "Pos"] > 5;
+                    case "right":
+                        return window["bot" + botId + "Pos"] % 6 != 5;
+                    case "down":
+                        return window["bot" + botId + "Pos"] < 30;
+                    case "left":
+                        return window["bot" + botId + "Pos"] % 6 != 0;
+                    case "take":
+                        return window.fruitPos[window["bot" + botId + "Pos"]];
+                    case "pass":
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+
+            function doAction(botId, action) {
+                let oldPos = window["bot" + botId + "Pos"];
+                var cells = document.querySelectorAll('.col');
+
+                switch (action) {
+                    case "up":
+                    window["bot" + botId + "Pos"] -= 6;
+                        cells[oldPos].getElementsByTagName('img')[0].setAttribute("src", emptyImage);
+                        cells[oldPos - 6].getElementsByTagName('img')[0].setAttribute("src", window["bot" + botId + "Image"]);
+                        break;
+                    case "right":
+                        window["bot" + botId + "Pos"] += 1;
+                        cells[oldPos].getElementsByTagName('img')[0].setAttribute("src", emptyImage);
+                        cells[oldPos + 1].getElementsByTagName('img')[0].setAttribute("src", window["bot" + botId + "Image"]);
+                        break;
+                    case "down":
+                        window["bot" + botId + "Pos"] += 6;
+                        cells[oldPos].getElementsByTagName('img')[0].setAttribute("src", emptyImage);
+                        cells[oldPos + 6].getElementsByTagName('img')[0].setAttribute("src", window["bot" + botId + "Image"]);
+                        break;
+                    case "left":
+                        window["bot" + botId + "Pos"] -= 1;
+                        cells[oldPos].getElementsByTagName('img')[0].setAttribute("src", emptyImage);
+                        cells[oldPos - 1].getElementsByTagName('img')[0].setAttribute("src", window["bot" + botId + "Image"]);
+                        break;
+                    case "take":
+                        window.fruitPos[window["bot" + botId + "Pos"]] = false;
+                        document.getElementById("bot" + botId + "Counter").innerHTML = parseInt(document.getElementById("bot" + botId + "Counter").innerHTML) + 1;
+                        document.getElementById("fruitCounter").innerText = fruitPos.filter(x => !!x).length;
+                        return;
+                    case "pass":
+                        return;
+                    default:
+                        return;
+                }
+
+                if (window.fruitPos[oldPos]) {
+                    cells[oldPos].getElementsByTagName('img')[0].setAttribute("src", fruitImage);
+                }
+            }
+
+            function play(botId) {
+                let action = Object.keys(actions).random();
+                if (validateAction(botId, action)) {
+                    window["bot" + botId + "Turn"] += 1;
+                    doAction(botId, action);
+                } else {
+                    play(botId);
+                }
+            }
+        });
+    </script>
+  </body>
+</html>

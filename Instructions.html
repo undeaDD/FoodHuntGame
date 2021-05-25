@@ -1,0 +1,84 @@
+
+<!-- saved from url=(0059)http://assessmentcentre.azurewebsites.net/instructions.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Instructions</title>
+    
+    <link rel="stylesheet" type="text/css" href="./Instructions_files/theme.css">
+    <link rel="stylesheet" type="text/css" href="./Instructions_files/navbar.css">
+    <link rel="stylesheet" type="text/css" href="./Instructions_files/instructions.css">
+    <link rel="stylesheet" id="tt-easy-google-fonts-css" href="./Instructions_files/css" type="text/css" media="all">
+</head>
+
+<body id="root" class="darkmode">
+    <div class="parent">
+        <div class="navBar">
+            <label class="navBar__label">Instructions</label>
+            <span id="links" class="navBar__links">
+                <a class="navBar__link" href="http://assessmentcentre.azurewebsites.net/live.html" target="_blank">Open Live Leaderboard</a>
+                <a class="navBar__link" href="http://assessmentcentre.azurewebsites.net/cheatSheets/jscheatsheet.pdf" target="_blank">Javascript 'Cheat' Sheet</a>
+                <input type="checkbox" id="navBar__toggle" class="navBar__toggle" checked="">
+                <label for="navBar__toggle">Dark</label>
+            </span>
+        </div>
+
+        <div class="instructions">
+            <h1 id="introduction">Introduction</h1>
+<p>You are required to implement a JavaScript function that is able to choose a <em>single</em> move in the game FoodHunt, given the current game state.</p>
+<p>FoodHunt is a game in which two AI Bots are placed on the starting position (row: 0, col: 0) on a square grid of 6 x 6 cells, where the top-left cell is at (row: 0, col: 0), and the bottom-right cell is (row: 5, col: 5). On some of these cells, there are pieces of fruit which the bots need to eat! In the game, bots attempt to pick up as many of these fruit as they can, scoring one point for each fruit they collect. Highest score wins!</p>
+<p>Every turn, each bot can take <em>one</em> action, chosen by returning a single string from the function containing their code. The action the bot takes can be: "NORTH", "EAST", "SOUTH", "WEST", "TAKE" or "PASS".</p>
+<p>NORTH, EAST, SOUTH and WEST cause the bot to attempt to move in the corresponding direction (Up, right, down, left). </p>
+<p>TAKE will pick up a fruit if the bot is positioned in the same cell as a fruit. (Note: If both bots attempt to pick up the same fruit on the same turn, they both receive a point).</p>
+<p>Bots can choose to PASS if they do not want to take an action on the turn. This is considered a valid move (See scoring for further information).</p>
+<h1 id="the-game-board">The Game Board</h1>
+<p>As previously mentioned, the game board is 6x6, running from (0,0) in the top-left to (5,5) in the bottom right. When playing a local test game (explained more below) the board will be displayed like this:</p>
+<pre><code>_1_ | 0__ | ___ | ___ | ___ | ___ |
+___ | ___ | __* | ___ | ___ | __* |
+__* | ___ | ___ | ___ | ___ | __* |
+__* | ___ | __* | __* | __* | ___ |
+___ | ___ | ___ | ___ | ___ | __* |
+___ | ___ | ___ | __* | ___ | __* |</code></pre>
+<p>In this visualisation, cells are separated from one another by the "|" character. You can see the locations of players 0 and 1 from the location of the characters "0" and "1" respectively. The locations of fruit are displayed using the "*" character. </p>
+<h1 id="the-function">The Function</h1>
+<p>You are given the function 'play(location, fruitLocations, turnNumber)' to implement. You do not need to alter this function signature - just write your code inside this function.</p>
+<p>Your function should always return one of the actions listed above, as a string. Returning any other value is invalid, as is returning an action which cannot be carried out in the current game state (ie, "NORTH" when you are at the top of the grid, or "TAKE" when you are not in a cell with fruit.)</p>
+<p>Your function is passed three parameters (location, fruitLocations, turnNumber), and will be called each time it is your bot's turn to play.</p>
+<h2 id="location-object-">location (object) :</h2>
+<p>location is an object of the form:</p>
+<pre><code>{
+    row: &lt;number&gt;
+    col: &lt;number&gt;
+}</code></pre>
+<p>It indicates the current position of your bot on the grid. </p>
+<h2 id="fruitlocations-array-">fruitLocations (array) :</h2>
+<p>fruitLocations is an array of objects, of the form:</p>
+<pre><code>[ {row: &lt;number&gt;, col: &lt;number&gt;}, {row: &lt;number&gt;, col: &lt;number&gt;}, ... ]</code></pre>
+<p>Each object in the array represents the position of an item of fruit on the board, which you can move to and pick up.</p>
+<h2 id="turnnumber-number-">turnNumber (number) :</h2>
+<p>The current turnNumber. This starts at 1, and will increment each time you move. Both players move once on every turn, and you can think of the bots as moving simultaneously.</p>
+<h1 id="scoring">Scoring</h1>
+<p>Your bot will play in a tournament against the other team's bots. It will be scored based on performance. </p>
+<p>A win earns you 4 points.</p>
+<p>A draw earns you 3 points.</p>
+<p>A loss earns you 0 points.</p>
+<p>Playing a full game without attempting an invalid move (as defined above) earns you a bonus 2 points (on top of your score from winning/drawing/losing).</p>
+<p>When you have a working bot, click "Submit Code" to send the current version to the server to compete in this tournament. You can submit your code as many times as you desire during the allowed time for the task.</p>
+<h1 id="local-test-games">Local Test Games</h1>
+<p>You are able to test out your bot without submitting it by using the test game in the bottom-right of the development environment. Here you can see how your bot behaves in a game.</p>
+<h1 id="notes">Notes:</h1>
+<ul>
+<li>If your code throws an error, your move will be skipped.</li>
+<li>If your move is invalid, your move will be skipped.</li>
+<li>The game will be drawn if 100 moves are made and no winner has been decided.</li>
+<li>You are able to make as many submissions of your code as you want - each submission is stored for discussion later and we love to see how your solution progressed!</li>
+<li>When running a test game, calling console.log() with a string argument will cause the string you pass to appear as part of the output in the bottom right.</li>
+<li>Feel free to create as many other functions as you feel is helpful, just make sure you keep the signature of the main "play" function exactly as it is!</li>
+<li>Good luck!</li>
+</ul>
+
+        </div>
+    </div>
+
+    <script src="./Instructions_files/toggle.js.Download"></script>
+
+
+</body></html>
